@@ -1,0 +1,28 @@
+flowchart TD
+
+A["System / Software Architecture Modeling<br>in Cameo"]
+B["Generate C++ Stub Code<br>from Model"]
+C["Implement Embedded Logic<br>C++ &amp; gRPC Services"]
+D["Integrate Trend Algorithms<br>Median Calculation &amp; Downsampling"]
+E["Middleware Communication<br>gRPC Service Integration"]
+F["Simulation &amp; Validation<br>QEMU Environment"]
+G["Deployment to Target Device<br>Patient Monitor Hardware"]
+H["Trend Data Processing<br>Visualization &amp; Storage"]
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H
+
+%% Colors
+style A fill:#4F46E5,color:#fff
+style B fill:#06B6D4,color:#fff
+style C fill:#10B981,color:#fff
+style D fill:#22C55E,color:#fff
+style E fill:#F59E0B,color:#fff
+style F fill:#F97316,color:#fff
+style G fill:#EF4444,color:#fff
+style H fill:#8B5CF6,color:#fff
