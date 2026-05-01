@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architectural Ledger | Senior System Architect</title>
+    <style>
+        :root {
+            --bg-deep: #030712;
+            --bg-surface: #0f172a;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --text-high: #f8fafc;
+            --text-mid: #94a3b8;
+            --border: #1e293b;
+            --tag-bg: rgba(56, 189, 248, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-high);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 5rem 2rem;
+            background: radial-gradient(circle at top right, #1e1b4b, transparent);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        h1 { font-size: 3rem; margin: 0; letter-spacing: -2px; background: linear-gradient(to right, #fff, var(--accent-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .role-badge { display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent-primary); border-radius: 4px; color: var(--accent-primary); font-family: monospace; font-size: 0.9rem; margin-top: 1rem; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+
+        .category { margin-bottom: 5rem; }
+        .category-header { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent-secondary); margin-bottom: 2rem; border-left: 3px solid var(--accent-secondary); padding-left: 1rem; }
+
+        .project-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-title { font-size: 1.8rem; font-weight: 800; margin: 0 0 1rem 0; color: #fff; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
+        
+        .section-label { font-size: 0.75rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+        .section-text { font-size: 0.95rem; color: var(--text-mid); margin-bottom: 1.5rem; }
+
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .tag { background: var(--tag-bg); color: var(--accent-primary); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; border: 1px solid rgba(56, 189, 248, 0.2); }
+
+        .highlight-box { border-left: 2px solid var(--accent-primary); padding-left: 1rem; background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: 0 8px 8px 0; }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Architectural Index</h1>
+    <div class="role-badge">SYSTEM ARCHITECT // PRODUCT OWNER</div>
+</header>
+
+<div class="container">
+
+    <div class="category">
+        <div class="category-header">Distributed Systems & Cloud Scale</div>
+
+        <article class="project-block">
+            <h2 class="project-title">Next-Gen Microservices Migration (PHP to Go)</h2>
+            <div class="highlight-box">
+                <span class="section-label">Purpose</span>
+                <p class="section-text">Modernizing a high-traffic monolithic infrastructure into a resilient, distributed ecosystem to support rapid user growth and real-time data processing.</p>
+            </div>
+            
+            <div class="grid">
+                <div>
+                    <span class="section-label">Architecture: Event-Driven Microservices</span>
+                    <p class="section-text">Utilized Domain-Driven Design (DDD) to decompose the monolith into bounded contexts, using an event-driven approach for inter-service communication.</p>
+                    
+                    <span class="section-label">Why this Architecture?</span>
+                    <p class="section-text">To achieve horizontal scalability and fault isolation. By moving to a distributed architecture, we reduced system-wide failures and optimized resource consumption across Kubernetes clusters.</p>
+                </div>
+                <div>
+                    <span class="section-label">Main Use</span>
+                    <p class="section-text">Scalable backend for multi-tenant platforms requiring high availability and low-latency responses.</p>
+                    
+                    <span class="section-label">Technical Stack</span>
+                    <div class="tech-stack">
+                        <span class="tag">Go (Golang)</span><span class="tag">gRPC</span><span class="tag">Protobuf</span><span class="tag">Kubernetes</span><span class="tag">AWS</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="category">
+        <div class="category-header">Intelligent Systems & AI Infrastructure</div>
+
+        <article class="project-block">
+            <h2 class="project-title">Agentic "Code Cartographer" Platform</h2>
+            <div class="highlight-box">
+                <span class="section-label">Purpose</span>
+                <p class="section-text">Automating the discovery and semantic mapping of massive, cross-domain engineering codebases to reduce technical debt and accelerate onboarding.</p>
+            </div>
+
+            <div class="grid">
+                <div>
+                    <span class="section-label">Architecture: Multi-Agent Swarm</span>
+                    <p class="section-text">Built on a retrieval-augmented generation (RAG) pipeline using specialized agents for dependency tracing and semantic summarization.</p>
+                    
+                    <span class="section-label">Why this Architecture?</span>
+                    <p class="section-text">Enables modular intelligence where agents handle specific tasks (e.g., parsing vs. explaining). The Graph DB provides the "ground truth" for the LLM to prevent hallucinations during code analysis.</p>
+                </div>
+                <div>
+                    <span class="section-label">Main Use</span>
+                    <p class="section-text">Self-documenting infrastructure for legacy software, allowing developers to query system architecture via natural language.</p>
+                    
+                    <span class="section-label">Technical Stack</span>
+                    <div class="tech-stack">
+                        <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Neo4j (Graph)</span><span class="tag">ChromaDB</span><span class="tag">LLMs</span><span class="tag">FastAPI</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="category">
+        <div class="category-header">Enterprise Toolchain & Performance</div>
+
+        <article class="project-block">
+            <h2 class="project-title">NeoFlash: High-Performance JVM Profiler</h2>
+            <div class="highlight-box">
+                <span class="section-label">Purpose</span>
+                <p class="section-text">Building a specialized performance-monitoring dashboard for complex Eclipse-based engineering tools to identify memory bottlenecks in real-time.</p>
+            </div>
+
+            <div class="grid">
+                <div>
+                    <span class="section-label">Architecture: Observer & JMX Integration</span>
+                    <p class="section-text">A decoupled monitoring layer that attaches to remote JVM processes using JMX to stream performance telemetry without impacting the host process.</p>
+                    
+                    <span class="section-label">Why this Architecture?</span>
+                    <p class="section-text">Real-time performance tuning in architectural tools requires a non-intrusive approach. The Observer pattern ensures the UI remains responsive while handling high-frequency telemetry data.</p>
+                </div>
+                <div>
+                    <span class="section-label">Main Use</span>
+                    <div class="section-text">Detecting UI thread blocks and memory leaks in mission-critical desktop modeling applications.</div>
+                    
+                    <span class="section-label">Technical Stack</span>
+                    <div class="tech-stack">
+                        <span class="tag">Java</span><span class="tag">Eclipse RCP</span><span class="tag">JMX</span><span class="tag">VisualVM</span><span class="tag">Maven</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-block">
+            <h2 class="project-title">Cross-Tool Architecture Sync (onePLM)</h2>
+            <div class="highlight-box">
+                <span class="section-label">Purpose</span>
+                <p class="section-text">Synchronizing complex architectural models between SysML tools (Cameo/Rhapsody) and Enterprise PLM backends (3DEXPERIENCE).</p>
+            </div>
+
+            <div class="grid">
+                <div>
+                    <span class="section-label">Architecture: Hexagonal / Adapter Pattern</span>
+                    <p class="section-text">The system uses a core transformation engine with tool-specific adapters, ensuring that model semantics remain consistent across different platforms.</p>
+                    
+                    <span class="section-label">Why this Architecture?</span>
+                    <p class="section-text">Allows the system to scale to new tools (like CodeBeamer or Sparx EA) without modifying the core translation logic, ensuring high maintainability in a multi-vendor toolchain.</p>
+                </div>
+                <div>
+                    <span class="section-label">Main Use</span>
+                    <p class="section-text">Enabling a "Single Source of Truth" for automotive and aerospace system engineering across thousands of variants.</p>
+                    
+                    <span class="section-label">Technical Stack</span>
+                    <div class="tech-stack">
+                        <span class="tag">Java</span><span class="tag">EMF</span><span class="tag">OSLC</span><span class="tag">REST</span><span class="tag">XML/XSD</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+</div>
+
+</body>
+</html>
